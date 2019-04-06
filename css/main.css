@@ -1,0 +1,602 @@
+/*
+theme name is :Meals Company
+theme coder and design:Osama Askar
+date :6-4-2019
+
+*/
+/*--------------------Start Global------------*/
+
+html.body{
+    margin:0;
+    padding: 0;
+    
+}
+body{
+}
+.section{
+    padding:80px 0;
+}
+.loading{
+    display: none;
+}
+
+.b-active{
+    border-bottom: 2px solid #f7951f;
+}
+/*--------------------End Global------------*/
+/*--------------------Start Menu------------*/
+.menu{
+    position: fixed;
+    top:0;
+    right:0;
+    background-color: #f7951f;
+    width:60px;
+    height: 60px;
+    cursor: pointer;
+    z-index: 4;
+   
+}
+.menu span{
+    position: absolute;
+    width:30px;
+    height: 2px;
+    background-color: #fff;
+    display: block;
+    top:calc(50% - 1px);
+    left:calc(50% - 15px);
+    transition: .2s;
+}
+.menu span:nth-child(1){
+    transform: translateY(-10px);
+}
+.menu span:nth-child(3){
+    transform: translateY(10px);
+}
+.menu.active span:nth-child(1){
+    transform: translateY(0px) rotate(-45deg);
+}
+.menu.active span:nth-child(3){
+    transform: translateY(0px) rotate(45deg);
+}
+.menu.active span:nth-child(2){
+    transform: translateX(-30px);
+    opacity: 0;
+}
+.menu-bar{
+    position: fixed;
+    top:0;
+    right:0;
+    width: 100%;
+    height: 60px;
+    background-color: #eee;
+    transition: .5s;
+    transform: translateX(100%);
+    z-index: 3;
+}
+.menu-bar.active{
+    transform: translateX(0);
+}
+.menu-bar ul{
+    display: flex;
+    margin:0;
+    padding: 0;
+    float: left;
+}
+.menu-bar ul li{
+    list-style: none;
+}
+.menu-bar ul li a{
+    
+    line-height: 60px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 500;
+    padding:0 20px;
+    color:#0191c8;
+    display: block;
+    transition: all .5s ease-in-out;
+}
+.menu-bar ul li a:hover{
+    background:#f7951f;
+    color:#fff;
+}
+@media(max-width:768px){
+    .menu-bar{
+        height: auto;
+    }
+    .menu-bar ul {
+        display: inherit;
+        float: none;
+        text-align: center;
+        width: 100%;
+        height: 100vh;
+    }
+}
+/*--------------------End Menu------------*/
+/*-------------------Start Header------------*/
+.header{
+    background-image:  url('../images/meals.png');
+    background-size: cover;
+    background-position:center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+     
+}
+.header .header-content {
+    max-width:500px;
+}
+.header .header-content h1{
+    color: #f7951f;
+    margin-bottom: 25px;
+    font-size: 40px;
+}
+.header .header-content p{
+    color: #c1c0c0;
+    font-size: 14px;
+    line-height: 1.8;
+}
+@media(max-width:768px){
+
+    .header .header-content h1{
+       font-size: 30px;
+    }
+    .header .header-content p{
+        font-size: 13px;
+    }
+}
+/*-------------------End Header------------*/
+/*-------------------Start About ------------*/
+.about h1{
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+    font-size: 35px;
+    color: #f7951f;
+    font-weight: 600;
+}
+.about .about-desc{
+    color: #666;
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 300px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #868282;
+  color: black;
+  z-index: 2;
+}
+
+.flip-card-back {
+  background-color: #f7951f;
+  color: white;
+  transform: rotateY(180deg);
+  z-index: 1;
+}
+.first-card {
+    background-color: #0191c8;
+}
+.flip-card img{
+    margin-top: 35px;
+    margin-bottom: 15px;
+}
+.flip-card h3{
+    font-size: 25px;
+    letter-spacing: 2px;
+    color: #fff;
+    font-weight: 400;
+}
+.flip-card i{
+    font-size: 30px;
+    margin-top: 35px;
+    margin-bottom: 15px;
+} 
+.flip-card p{
+    line-height: 1.7;
+    font-size: 16px;
+}
+@media(max-width:768px){
+    .flip-card{
+        margin-bottom: 20px;
+    }
+}
+/*-------------------End About ------------*/
+/*-------------------Start Products------------*/
+.products{
+    background-image: url('../images/product-back.png');
+    background-size: cover;
+}
+.products .product-details{
+    position: relative;
+    
+}
+.products h1{
+    margin-bottom: 30px;
+    font-size: 35px;
+    color: #f7951f;
+    font-weight: 600;
+}
+.products .product-photo {
+    margin-bottom: 20px;
+    
+}
+.products .product-photo img{
+    width:100%;
+    border-radius:5px;
+    border:4px solid #fff;
+}
+.products  .over{
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color:#0191c8;
+    width: 100%;
+    height: 30%;
+    left: 0;
+    opacity: 0;
+    text-align: center;
+    transition: .5s ease;
+}
+.products  .over h3{
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-weight: 400;
+}
+.products .product-details:hover .over{
+    opacity: 1;
+}
+/*-------------------End Products------------*/
+/*-------------------Start Entilaka------------*/
+.entilaka{
+    background-image: url('../images/background%E2%80%93%201.png');
+    background-size: cover;
+    overflow: hidden;
+}
+.entilaka .entilake-content{
+    padding: 20px 10px;
+}
+.entilaka .entilake-content h1{
+    margin-bottom: 30px;
+    font-size: 35px;
+    color: #fff;
+    font-weight: 600
+}
+.entilaka .entilake-content p{
+    float: left;
+    max-width: 400px;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #fdeded;
+}
+/*-------------------End Entilaka------------*/
+/*-------------------Start Services------------*/
+.services .services-content{
+     max-width: 500px;
+     margin: 0 auto;
+     background-color: #d2d0d0;
+     padding: 20px; 0;
+     transform: skewX(20deg);
+}
+.services .services-content h1{
+    margin-bottom: 30px;
+    font-size: 35px;
+    color: #f7951f;
+    font-weight: 600
+}
+.services .services-content p{
+    font-size: 15px;
+    color:#757272;;
+    line-height: 1.8;
+}
+@media(max-width:380px){
+    .services .services-content{
+        transform: skewX(10deg)
+    }
+}
+@media(max-width:576px){
+    .services .services-content{
+        max-width: 248px;    
+    }
+    .services .services-content p{
+        font-size: 13px;
+    }
+}
+
+/*-------------------End Services------------*/
+
+/*--------------------Start Clients------------*/
+
+.clients h1{
+    margin-bottom: 40px;
+    font-size: 35px;
+    color: #f7951f;
+    font-weight: 600
+}
+.clients .clients-info{
+    display: flex;
+    justify-content: center;
+}
+.clients .client-details{
+    width:300px;
+    text-align: center;
+    padding-right: 15px;
+}
+.clients .client-details:first-child{
+    padding-right: 0;
+}
+.clients .client-details img{
+    width:100%;
+    margin-bottom: 25px;
+}
+.clients .client-details .gover{
+    margin-bottom: 12px;
+}
+.clients .client-details  h3{
+    color: #0191c8;
+    font-size: 20px;
+}
+@media(max-width:768px){
+    .clients .clients-info{
+        flex-direction: column;
+        align-items: center; 
+    } 
+    .clients .client-details{
+        padding: 0;
+    }
+    .clients .client-details  h3{
+        margin-bottom: 30px;
+    }
+}
+/*--------------------End Clients------------*/
+/*--------------------Start Why------------*/
+.why{
+    background-image: linear-gradient(to top right, #4edddb, #0bb6eb);
+}
+.why .why-content h1{
+    margin-bottom: 30px;
+    font-size: 35px;
+    color: #fff;
+    font-weight: 400;
+}
+.why .why-content p{
+    color: #f9f2f2;
+    margin-bottom: 30px; 
+}
+.why .why-content h2{
+    margin-bottom: 40px;
+    font-size: 30px;
+    color: #fff;
+    font-weight: 600;
+}
+.why h3{
+    font-size: 25px;
+    margin-bottom: 25px;
+    color: #fff;
+    box-shadow: 3px 2px 8px 5px #54545459;;
+    padding: 7px 0px
+}
+.why span{
+    font-size: 20px;
+    padding-left: 10px;
+    font-weight: bold;
+    color: #f7951f;
+}
+@media(max-width:992px){
+    .why img{
+    margin-bottom: 30px;
+    }
+}
+
+/*--------------------End Why------------*/
+/*--------------------Start Footer------------*/
+.footer{
+   
+}
+.footer h1{
+    margin-bottom: 30px;
+    font-size: 35px;
+    color: #f7951f;
+    font-weight: 400;
+}
+.footer p{
+    font-size: 15px;
+    color: #757272;
+    line-height: 1.8;
+}
+.footer h2{
+    margin-bottom: 30px;
+    font-size: 35px;
+    color: #f7951f;
+    font-weight: 400;
+}
+.footer i{
+    color:#f7951f;
+}
+.footer span{
+    font-size: 15px;
+    color: #757272;
+    
+}
+@media(max-width:575.98px){
+    .footer i,
+    .footer span{
+        margin-bottom: 20px;
+        
+    }
+    .footer .media-footer{
+        text-align: center;
+    }
+}
+/*--------------------End Footer------------*/
+/*--------------------Start Copy------------*/
+.copy{
+    padding: 40px 0;
+    background-color: #19bee8;
+    color:#fff;
+}
+.copy h3{
+    font-size: 23px;
+}
+@media(max-width:576px){
+    .copy h3{
+        font-size: 20px;
+    }
+}
+/*--------------------End Copy------------*/
+
+/*------------Start Button Scroll-----------*/
+
+.sroll-button i{
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      background-color:#19bee8;
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      color:#fff;
+      border: 2px solid #f7951f;
+      font-size: 20px;
+      display: none;
+      cursor: pointer
+}
+
+/*------------End Button Scroll-----------*/
+
+/*------------Start Spinner-----------*/
+
+.sk-folding-cube {
+  margin: 400px auto;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  -webkit-transform: rotateZ(45deg);
+  transform: rotateZ(45deg);
+    
+}
+
+.sk-folding-cube .sk-cube {
+  float: left;
+  width: 50%;
+  height: 50%;
+  position: relative;
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1); 
+}
+.sk-folding-cube .sk-cube:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0bb6eb;
+  -webkit-animation: sk-foldCubeAngle 2.4s infinite linear both;
+  animation: sk-foldCubeAngle 2.4s infinite linear both;
+  -webkit-transform-origin: 100% 100%;
+  -ms-transform-origin: 100% 100%;
+  transform-origin: 100% 100%;
+}
+.sk-folding-cube .sk-cube2 {
+  -webkit-transform: scale(1.1) rotateZ(90deg);
+  transform: scale(1.1) rotateZ(90deg);
+}
+.sk-folding-cube .sk-cube3 {
+  -webkit-transform: scale(1.1) rotateZ(180deg);
+  transform: scale(1.1) rotateZ(180deg);
+}
+.sk-folding-cube .sk-cube4 {
+  -webkit-transform: scale(1.1) rotateZ(270deg);
+  transform: scale(1.1) rotateZ(270deg);
+}
+.sk-folding-cube .sk-cube2:before {
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+.sk-folding-cube .sk-cube3:before {
+  -webkit-animation-delay: 0.6s;
+  animation-delay: 0.6s; 
+}
+.sk-folding-cube .sk-cube4:before {
+  -webkit-animation-delay: 0.9s;
+  animation-delay: 0.9s;
+}
+@-webkit-keyframes sk-foldCubeAngle {
+  0%, 10% {
+    -webkit-transform: perspective(140px) rotateX(-180deg);
+    transform: perspective(140px) rotateX(-180deg);
+    opacity: 0; 
+  } 25%, 75% {
+    -webkit-transform: perspective(140px) rotateX(0deg);
+    transform: perspective(140px) rotateX(0deg);
+    opacity: 1; 
+  } 90%, 100% {
+    -webkit-transform: perspective(140px) rotateY(180deg);
+    transform: perspective(140px) rotateY(180deg);
+    opacity: 0; 
+  } 
+}
+
+@keyframes sk-foldCubeAngle {
+  0%, 10% {
+    -webkit-transform: perspective(140px) rotateX(-180deg);
+            transform: perspective(140px) rotateX(-180deg);
+    opacity: 0; 
+  } 25%, 75% {
+    -webkit-transform: perspective(140px) rotateX(0deg);
+            transform: perspective(140px) rotateX(0deg);
+    opacity: 1; 
+  } 90%, 100% {
+    -webkit-transform: perspective(140px) rotateY(180deg);
+            transform: perspective(140px) rotateY(180deg);
+    opacity: 0; 
+  }
+}
+/*------------End Spinner-----------*/
+
+
+
+
+
+
+
+
+
